@@ -1,0 +1,10 @@
+.galery {
+  border: 1px black solid;
+  transform: scale(0.5);
+
+}
+
+.galery img {
+  border-radius: 15px;
+  border: 1px black solid;
+}

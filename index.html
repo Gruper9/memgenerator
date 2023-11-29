@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
+<body onload="onInit()">
+
+
+    <canvas width="450" height="450" onclick="onDraw(event)">
+    </canvas>
+
+    <input type="text" onkeyup="onEditLine(this)">
+    <input type="color" onchange="onSetColor(this)">
+
+
+    <section class="galery flex-row wrap">
+       <div > <h2>Select an image</h2></div>
+       <div class="img-galerey  flex-row wrap">
+    </div>
+    </section>
+
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/meme.controller.js"></script>
 </body>
 </html>
