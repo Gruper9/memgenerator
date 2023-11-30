@@ -70,5 +70,8 @@ function setFontSizze(value) {
 function removeLine() {
     gMeme.lines[0].txt = ''
     gMeme.lines[0].size = 50
-    gMeme.lines[0].color = 'white'
+    gMeme.lines[0].color = 'white'   
+}
+function resetLine(){
+    gMeme.lines[0].txt = 'edit this text'
 }

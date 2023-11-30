@@ -64,4 +64,5 @@ function onRemoveLine() {
     coverCanvasWithImg(document.querySelector(`[data-id="${getSelectedImg().id}"]`))
     const elInput = document.querySelector('.line-input')
     elInput.value = ''
+    resetLine()
 }
