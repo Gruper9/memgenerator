@@ -7,6 +7,10 @@
     flex-direction:column;
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
+
 .grid-col{
     display: grid;
     grid-auto-flow: column;
@@ -14,8 +18,4 @@
 .grid-row{
     display: grid;
     grid-auto-flow: row;
-}
-
-.wrap{
-    flex-wrap: wrap;
 }

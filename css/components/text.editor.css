@@ -1,0 +1,26 @@
+.edit-text{
+    margin-left: 10px;
+    place-content: center;
+}
+
+.edit-text button {
+    border: 1px grey solid;
+    background: none;
+    border-radius: 10px;
+    width: 50px;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.edit-text button:hover {
+    background: grey;
+    color: white
+}
+
+.edit-text button:active {
+    box-shadow: inset -3px -2px 0px 0px rgba(0, 0, 0, 0.2);
+    background: white;
+    color: black;
+}

@@ -1,10 +1,22 @@
 .galery {
   border: 1px black solid;
-  transform: scale(0.5);
-
+  /* position: absolute;
+  transform: scale(0.5) ; */
+  width: 700px;
+  justify-content: center;
+  align-items: center;
 }
 
 .galery img {
   border-radius: 15px;
+  width: 200px;
+
   border: 1px black solid;
+}
+
+.img-galerey {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
 }

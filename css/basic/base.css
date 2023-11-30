@@ -9,5 +9,6 @@ canvas {
 }
 
 body {
+    position: relative;
     margin: 0;
 }

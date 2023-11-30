@@ -34,14 +34,34 @@ function drawText(text, x, y) {
 }
 
 function coverCanvasWithImg(elImg) {
-   const imgId= returnImgById(elImg.dataset.id)
+    const imgId = returnImgById(elImg.dataset.id)
     setSelectedImg(imgId)
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+    drawText(getLine(), 200, 50)
 }
 
-function onEditLine(elInput){
+function onEditLine(elInput) {
     setLine(elInput.value)
+    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+    coverCanvasWithImg(document.querySelector(`[data-id="${getSelectedImg().id}"]`))
 }
-function onSetColor(elInput){
+function onSetColor(elInput) {
     setColor(elInput.value)
+
+    drawText(getLine(), 200, 50)
+}
+
+
+function onChangeFontSize(elBtn) {
+    const value = +elBtn.value
+    console.log(value);
+    setFontSizze(value)
+    coverCanvasWithImg(document.querySelector(`[data-id="${getSelectedImg().id}"]`))
+}
+
+function onRemoveLine() {
+    removeLine()
+    coverCanvasWithImg(document.querySelector(`[data-id="${getSelectedImg().id}"]`))
+    const elInput = document.querySelector('.line-input')
+    elInput.value = ''
 }
