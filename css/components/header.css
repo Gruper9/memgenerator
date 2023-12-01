@@ -1,0 +1,16 @@
+.nav-list li{
+    margin-right: 100px;
+    cursor: pointer;
+}
+.logo{
+    margin-left: 50px;
+    line-height: 0.7rem;
+    padding: 17px;
+    border: 1px orange solid;
+    border-radius: 50%;
+}
+.logo::after{
+    content: '!';
+    font-weight: bold;
+    color:red
+}

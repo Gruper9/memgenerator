@@ -38,6 +38,7 @@ function coverCanvasWithImg(elImg) {
     setSelectedImg(imgId)
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
     drawText(getLine(), 200, 50)
+    onNav('editor')
 }
 
 function onEditLine(elInput) {
@@ -54,7 +55,6 @@ function onSetColor(elInput) {
 
 function onChangeFontSize(elBtn) {
     const value = +elBtn.value
-    console.log(value);
     setFontSizze(value)
     coverCanvasWithImg(document.querySelector(`[data-id="${getSelectedImg().id}"]`))
 }
@@ -65,4 +65,20 @@ function onRemoveLine() {
     const elInput = document.querySelector('.line-input')
     elInput.value = ''
     resetLine()
+}
+
+function onNav(section){
+    const elEditor=document.querySelector('.editor')
+    const elGalery=document.querySelector('.galery')
+
+switch(section){
+    case 'galery':
+        elEditor.classList.add('hide')
+        elGalery.classList.remove('hide')
+        break;
+    case 'editor': 
+    elEditor.classList.remove('hide')
+    elGalery.classList.add('hide')
+        break;
+}
 }

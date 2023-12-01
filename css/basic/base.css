@@ -11,4 +11,24 @@ canvas {
 body {
     position: relative;
     margin: 0;
+    overflow-x: hidden;
+}
+header{
+    height: 4rem;
+   align-items: center;
+   background: yellow;
+   margin-bottom: 10px;
+}
+footer{
+    width: 100vw;
+    height: 4rem;
+    background: yellow;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+    color:black;
+
 }

@@ -19,3 +19,25 @@
     display: grid;
     grid-auto-flow: row;
 }
+.clean-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.justify{
+    justify-content: center;
+}
+.align{
+    align-items: center;
+}
+.place-center{
+    place-content: center;
+}
+.between{
+    justify-content: space-between;
+}
+
+.hide{
+    display: none;
+}

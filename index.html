@@ -10,29 +10,50 @@
 
 <body onload="onInit()">
 
-    <div class="flex-row wrap">
-        <canvas width="450" height="450">
-        </canvas>
+
+    <header class="flex-row between">
+
+        <a href="index.html" class="logo">i hate <br /> this sprint</a>
+
+        <nav>
+            <ul class="nav-list flex-row clean-list">
+                <li>
+                    <span onclick="onNav('galery')">Galery</span>
+                </li>
+                <li>
+                    <span onclick="onNav('editor')">Editor</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 
-        <div class="edit-text flex-col">
-            <div>
-                <label for="text">edit text: </label>
-                <input type="text" class="line-input" name="text" onkeyup="onEditLine(this)">
-                <button class="remove-line" onclick="onRemoveLine()" title="remove line">🗑️</button>
+    <main class="flex-row justify">
+
+
+        <section class="editor flex-row wrap hide">
+            <canvas width="450" height="450">
+            </canvas>
+
+            <div class="edit-text flex-col">
+                <div>
+                    <label for="text">edit text: </label>
+                    <input type="text" class="line-input" name="text" onkeyup="onEditLine(this)">
+                    <button class="remove-line" onclick="onRemoveLine()" title="remove line">🗑️</button>
+                </div>
+                <div>
+                    <label for="color">text color: </label>
+                    <input type="color" name="color" onchange="onSetColor(this)" title="change font color">
+                </div>
+
+                <div>
+                    <lable for="size">change font size: </lable>
+                    <button onclick="onChangeFontSize(this)" value="10" title="increase text size">↑</button>
+                    <button onclick="onChangeFontSize(this)" value="-10" title="decrease text size">↓</button>
+
+                </div>
             </div>
-            <div>
-                <label for="color">text color: </label>
-                <input type="color" name="color" onchange="onSetColor(this)" title="change font color">
-            </div>
-
-        <div>
-            <lable for="size">change font size: </lable>
-            <button onclick="onChangeFontSize(this)" value="10" title="increase text size">↑</button>
-            <button onclick="onChangeFontSize(this)" value="-10" title="decrease text size">↓</button>
-            
-        </div> 
-        </div>
+        </section>
 
         <section class="galery flex-col wrap">
             <div>
@@ -41,7 +62,12 @@
             <div class="img-galerey  flex-row wrap">
             </div>
         </section>
-    </div>
+
+    </main>
+    <footer class="flex-row">
+        <span>&copy;Gruper 2023 </span>
+        <span class="note">Really really hate this sprint</span>
+    </footer>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/meme.controller.js"></script>
