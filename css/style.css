@@ -13,4 +13,6 @@
 /* Components*/
 @import url("components/galery.css");
 @import url("components/text.editor.css");
+@import url("components/header.css");
+@import url("components/footer.css");
 
