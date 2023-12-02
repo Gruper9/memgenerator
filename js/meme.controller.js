@@ -90,12 +90,9 @@ function onNav(section) {
 function addListeners() {
     addMouseListeners()
     addTouchListeners()
-    //Listen for resize ev
     window.addEventListener('resize', () => {
         resizeCanvas()
-        //Calc the center of the canvas
         const center = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
-        //Create the circle in the center
         createCircle(center)
         renderCanvas()
     })
@@ -120,11 +117,8 @@ function getEvPos(ev) {
     }
 
     if (TOUCH_EVS.includes(ev.type)) {
-        // Prevent triggering the mouse ev
         ev.preventDefault()
-        // Gets the first touch point
         ev = ev.changedTouches[0]
-        // Calc the right pos according to the touch screen
         pos = {
             x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
             y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
@@ -133,14 +127,9 @@ function getEvPos(ev) {
     return pos
 }
 function onDown(ev) {
-    // console.log('onDown')
-    // Get the ev pos from mouse or touch
     const pos = getEvPos(ev)
-    // console.log('pos', pos)
     if (!isTxtClicked(pos)) return
-
     setTxtDrag(true)
-    //Save the pos we start from
     gStartPos = pos
     document.body.style.cursor = 'grabbing'
 }
@@ -151,13 +140,10 @@ function onMove(ev) {
     console.log('Moving the txt')
 
     const pos = getEvPos(ev)
-    // Calc the delta, the diff we moved
     const dx = pos.x - gStartPos.x
     const dy = pos.y - gStartPos.y
     moveTxt(dx, dy)
-    // Save the last pos, we remember where we`ve been and move accordingly
     gStartPos = pos
-    // The canvas is render again after every move
     renderCanvas()
 }
 
@@ -167,8 +153,6 @@ function onUp() {
     document.body.style.cursor = 'grab'
 }
 function renderCanvas() {
-    //Set the background color to grey
-    //Clear the canvas,  fill it with grey background
     gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height)
     coverCanvasWithImg(document.querySelector(`[data-id="${getSelectedImg().id}"]`))
 }
