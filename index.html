@@ -13,7 +13,7 @@
 
     <header class="flex-row between">
 
-        <a href="index.html" class="logo">i hate <br /> this sprint</a>
+        <a href="index.html" class="logo">I hate <br /> Canvas</a>
 
         <nav>
             <ul class="nav-list flex-row clean-list">
@@ -26,10 +26,17 @@
             </ul>
         </nav>
     </header>
-
+<aside class="flex-col justify ">
+    <ul class="clean-list flex-col">
+        <li><a href="self.destruct.html">Self Destruct</a></li>
+        <li><a href="anxiety.html">Dont click here</a></li>
+        <li onclick="downloadImg(this)"><a href="#" class="btn"  download="my-img.jpg">Download</a></li>
+        <li><a href="#" onclick="onUploadImg()">Share</a></li>
+    </ul>
+    
+</aside>
 
     <main class="flex-row justify">
-
 
         <section class="editor flex-row wrap hide">
             <canvas width="450" height="450">
@@ -43,7 +50,7 @@
                 </div>
                 <div>
                     <label for="color">text color: </label>
-                    <input type="color" name="color" onchange="onSetColor(this)" title="change font color">
+                    <input type="color" name="color" oninput="onSetColor(this)" title="change font color">
                 </div>
 
                 <div>
@@ -70,6 +77,8 @@
     </footer>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/meme.service.js"></script>
+    <script src="js/upload.conteroller.js"></script>
+    <script src="js/share.conteroller.js"></script>
     <script src="js/meme.controller.js"></script>
 </body>
 

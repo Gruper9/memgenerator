@@ -1,0 +1,13 @@
+aside li{
+padding: 10px;
+border-top:1px grey solid ;
+
+}
+aside li:last-child{
+    border-bottom:1px grey solid ;
+}
+
+aside li:hover{
+    background: lightblue;
+    cursor: pointer;
+}

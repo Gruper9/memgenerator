@@ -15,9 +15,14 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
+            pos:{
+                x:200,
+                y:50
+            },
             txt: 'edit this text',
             size: 50,
-            color: 'white'
+            color: 'white',
+            isDrag: false
         }
     ]
 }
@@ -41,7 +46,7 @@ function returnImgById(id) {
 }
 //send the text line from the model to the controller
 function getLine() {
-    return gMeme.lines[0].txt
+    return gMeme.lines[0]
 }
 //get text from user input and update the model 
 function setLine(txt) {
@@ -72,6 +77,28 @@ function removeLine() {
     gMeme.lines[0].size = 50
     gMeme.lines[0].color = 'white'   
 }
+
+
+
+function isTxtClicked(clickedPos) {
+    const pos  = gMeme.lines[0].pos
+    // Calc the distance between two dots
+    const distance = Math.sqrt((pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2)
+    // console.log('distance', distance)
+    //If its smaller then the radius of the circle we are inside
+    return distance <= gMeme.lines[0].size
+}
 function resetLine(){
     gMeme.lines[0].txt = 'edit this text'
+}
+function setTxtDrag(isDrag) {
+    gMeme.lines[0].isDrag = isDrag
+}
+
+function moveTxt(dx, dy) {
+    gMeme.lines[0].pos.x += dx
+    gMeme.lines[0].pos.y += dy
+}
+function getPos(){
+    return gMeme.lines[0].pos
 }

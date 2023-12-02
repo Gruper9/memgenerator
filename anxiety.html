@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEEEELLLLLPPPPPP
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="index.html">I HAVE NO IDEA WHAT<br /> I AM DOING</a>
+
+
+    <script>
+        const elBody = document.querySelector('body')
+        let blue = 100
+        let red = 100
+        let green = 100
+        let SetBG = setInterval(() => {
+            elBody.style.background = `rgb(${red} ${blue} ${green})`
+            blue += 31
+            green -= 23
+            red -= 17
+            if (red < 0 || blue > 255 || green > 255) {
+                blue = 100
+                red = 100
+                green = 100
+            }
+            if (red < 50) red = 202 - blue
+            if (green < 50) red = 131 - red
+            if (blue > 150) blue = 11 + green
+        }, 500)
+    </script>
+</body>
+
+</html>
