@@ -54,7 +54,7 @@ function onEditLine(elInput) {
 function onSetColor(elInput) {
     setColor(elInput.value)
 
-    drawText(getLine().txt, 200, 50)
+    drawText(getLine().txt, gStartPos.x, gStartPos.y)
 }
 
 
@@ -159,6 +159,6 @@ function renderCanvas() {
 
 
 function downloadImg(elLink) {
-    const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
+    const imgContent = gElCanvas.toDataURL('image/jpeg') 
     elLink.href = imgContent
 }
